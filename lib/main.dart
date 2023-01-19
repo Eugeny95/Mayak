@@ -57,14 +57,15 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '${Provider.of<HomeState>(context, listen: true).response}',
+              '${Provider.of<HomeState>(context, listen: true).counter}',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: Provider.of<HomeState>(context, listen: false).getHttp,
+        onPressed:
+            Provider.of<HomeState>(context, listen: false).incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
